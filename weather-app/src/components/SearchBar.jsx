@@ -25,7 +25,7 @@ export default function SearchBar() {
     setSearchTerm(e.target.value);
   };
 
-  const a = () => {
+  const conditionallyRenderCard = () => {
     if (apiResults.noNewSearchTerm === true) {
       return (
         <div>
@@ -53,7 +53,7 @@ export default function SearchBar() {
         />
         <button type="submit">Submit</button>
       </form>
-      {a()}
+      {conditionallyRenderCard()}
     </div>
   );
 }
