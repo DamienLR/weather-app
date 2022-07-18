@@ -1,0 +1,10 @@
+.app {
+  text-align: center;
+}
+
+.hero__header {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
