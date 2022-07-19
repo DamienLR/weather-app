@@ -3,6 +3,9 @@ import Card from "./Card";
 import "../css/SearchBar.css";
 
 export default function SearchBar() {
+  const keyAPI = "54bb3ee2ef714beaa14124525212910";
+  // remember to hide the key in a proper project
+
   const [searchTerm, setSearchTerm] = useState("");
   const [apiResults, setApiResults] = useState({
     noNewSearchTerm: true,
@@ -10,10 +13,23 @@ export default function SearchBar() {
 
   const fetchData = useCallback(() => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=54bb3ee2ef714beaa14124525212910&q=${searchTerm}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${keyAPI}&q=${searchTerm}&aqi=no`
     )
-      .then((response) => response.json())
-      .then((data) => setApiResults(data));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("network response was not OK");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setApiResults(data);
+      })
+      .catch((error) => {
+        console.error(
+          "There has been a problem with your fetch operation:",
+          error
+        );
+      });
   }, [searchTerm]);
 
   const handleSubmit = (e) => {
