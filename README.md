@@ -11,3 +11,5 @@ Alternate solution found: I could use Object.keys to check.
 # 2
 
 Problem: when a user enters an invalid search term the app breaks and causes errors.
+
+Solution: read up on error handling using fetch. https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#checking_that_the_fetch_was_successful
