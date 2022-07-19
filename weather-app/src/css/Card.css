@@ -1,0 +1,7 @@
+.card {
+  /* text-align: left; */
+}
+
+.card > p {
+  padding: 0.5rem;
+}
