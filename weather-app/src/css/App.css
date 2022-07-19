@@ -1,5 +1,7 @@
 .app {
   text-align: center;
+  background-color: #a3a3a3;
+  height: 100vh;
 }
 
 .hero__header {
