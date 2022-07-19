@@ -1,5 +1,6 @@
 import { useState, useCallback } from "react";
 import Card from "./Card";
+import "../css/SearchBar.css";
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,7 +30,7 @@ export default function SearchBar() {
     if (apiResults.noNewSearchTerm === true) {
       return (
         <div>
-          <p>Enter a city</p>
+          <p className="paragraph">Enter a city</p>
         </div>
       );
     } else {
@@ -42,16 +43,19 @@ export default function SearchBar() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="search-bar">
+      <form className="search-bar__form" onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
           value={searchTerm || ""}
           type="text"
           placeholder="Search for a city..."
           name="search"
+          className="search-bar__input form-styling"
         />
-        <button type="submit">Submit</button>
+        <button className="search-bar__button form-styling" type="submit">
+          Submit
+        </button>
       </form>
       {conditionallyRenderCard()}
     </div>

@@ -1,0 +1,22 @@
+.search-bar {
+  /* padding: 2rem 0; */
+}
+
+.search-bar__form {
+  padding: 2rem 0 1rem;
+}
+
+.search-bar__input {
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+
+.search-bar__button {
+  padding: 0.25rem;
+  margin-left: 1rem;
+}
+
+.form-styling {
+  border: 0;
+  background-color: grey;
+  border-radius: 5px;
+}
